@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revamp Site - Tanbir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+
+    <!-- Top Logo -->
+    <section class="hero" aria-labelledby="logo">
+      <div class="container">
+        <div class="hero-content">
+          <img src="img/Tanbir logo big.png" alt="Tanbir logo" class="hero-logo" width="400" height="174" decoding="async" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Statement Section -->
+    <section class="intro-section" aria-labelledby="intro-title">
+      <div class="container">
+        <p id="intro-title" class="intro-text">
+          I turn AI-built, vibe-coded ios apps into polished experiences people actually trust and love using.
+        </p>
+      </div>
+    </section>
+
+    <!-- Work Frame Section -->
+    <section class="work-frame-section" aria-label="Featured work">
+      <div class="work-frame-row">
+        <div class="work-frame">
+          <div class="work-frame-images">
+            <img src="img/work showcase/movie app.png" alt="Movie app preview" class="work-frame-image work-frame-image--back" loading="lazy">
+            <img src="img/work showcase/reading app 1.png" alt="Reading app preview" class="work-frame-image work-frame-image--middle" loading="lazy">
+            <img src="img/work showcase/skillshare app 1 (1).png" alt="Skillshare app preview" class="work-frame-image work-frame-image--front" loading="lazy">
+          </div>
+          <button type="button" class="work-frame-btn" data-open-work-modal>View work</button>
+        </div>
+        <a href="mailto:hello@tanbir.design" class="contact-btn">Contact me</a>
+      </div>
+    </section>
+
+    <!-- Work Showcase Modal -->
+    <div id="work-modal" class="work-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="work-modal-title">
+      <div class="work-modal__backdrop" data-close-work-modal></div>
+      <div class="work-modal__window" role="document">
+        <div class="work-modal__frame">
+          <div class="work-modal__header">
+            <h2 id="work-modal-title" class="work-modal__title">Showcasing Work</h2>
+            <button type="button" class="work-modal__close" aria-label="Close showcase" data-close-work-modal>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+          <div class="work-modal__grid" aria-label="Work showcase images">
+            <img src="img/work showcase/wallet app design (1).png" alt="Wallet app design" class="work-modal__img" loading="lazy">
+            <img src="img/work showcase/task app 1.png" alt="Task app 1" class="work-modal__img" loading="lazy">
+            <img src="img/work showcase/task app 2.png" alt="Task app 2" class="work-modal__img" loading="lazy">
+            <img src="img/work showcase/task app 3.png" alt="Task app 3" class="work-modal__img" loading="lazy">
+            <img src="img/work showcase/reading app 1.png" alt="Reading app 1" class="work-modal__img" loading="lazy">
+            <img src="img/work showcase/reading app 2.png" alt="Reading app 2" class="work-modal__img" loading="lazy">
+            <img src="img/work showcase/reading app 3.png" alt="Reading app 3" class="work-modal__img" loading="lazy">
+            <img src="img/work showcase/DeNote app 1.png" alt="DeNote app 1" class="work-modal__img" loading="lazy">
+            <img src="img/work showcase/DeNote app 2.png" alt="DeNote app 2" class="work-modal__img" loading="lazy">
+            <img src="img/work showcase/DeNote app 3.png" alt="DeNote app 3" class="work-modal__img" loading="lazy">
+            <img src="img/work showcase/skillshare app 1 (1).png" alt="Skillshare app" class="work-modal__img" loading="lazy">
+            <img src="img/work showcase/movie app.png" alt="Movie app" class="work-modal__img" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why you need us Section -->
+    <section class="why-section" aria-labelledby="why-title">
+      <div class="container">
+        <h2 id="why-title" class="section-title">Why you need us?</h2>
+        <div class="why-content">
+          <p class="why-paragraph">Over the years, AI has gone from needing endless prompting and iteration to turning ideas into working products in a matter of hours. With AI-assisted development and vibecoding, building complex applications has become easier and more accessible than ever. And now, everyone is doing it, ideas are being built, launched, and put in front of real users faster than ever before.</p>
+          <p class="why-paragraph">But there's a catch. As building has become easier, the experience has often become an afterthought. We're seeing more products that work well but feel generic, unpolished, soulless, or directionless. The technology might be impressive underneath, but users only experience what's in front of them, and that experience shapes whether they trust the product.</p>
+          <p class="why-paragraph">That's the gap I try to bridge as a designer: taking products that simply work and turning them into experiences that feel intuitive, polished, intentional, and distinct. Because building the product is easier now. Making it feel genuinely well made is where the real work begins.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What to expect Section -->
+    <section class="expect-section" aria-labelledby="expect-title">
+      <div class="container">
+        <h2 id="expect-title" class="section-title">What to expect?</h2>
+        <div class="list-container">
+          <ul class="simple-list" role="list">
+            <li>Consistent design at every touchpoint</li>
+            <li>Receive figma files</li>
+            <li>Revision round is just one</li>
+            <li>1 week or more, depending on the number of screens</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I need Section -->
+    <section class="need-section" aria-labelledby="need-title">
+      <div class="container">
+        <h2 id="need-title" class="section-title">What I need?</h2>
+        <div class="list-container">
+          <ul class="simple-list" role="list">
+            <li>Async communication through twitter & telegram</li>
+            <li>Upfront payment with Acctual</li>
+            <li>Screenshot of your app</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pricing" aria-labelledby="pricing-title">
+      <div class="pricing-container">
+        <div class="price-discount-container">
+          <div class="offer-banner">
+            <div class="offer-content">
+              <p class="offer-text">Exclusive offer for 10 founders:</p>
+              <div class="discount-badge">
+                <img src="img/discount.png" alt="" class="discount-icon">
+              </div>
+            </div>
+          </div>
+          <div class="price-container">
+            <div class="selector-header">
+              <h3 id="pricing-title" class="selector-title">Choose Screens</h3>
+            </div>
+            <div class="tier-cards" role="radiogroup" aria-label="Select number of screens">
+              <label class="tier-card" data-tier="1-3" data-price="360" data-screens="1 to 3" data-indicator="indicator 1">
+                <div class="tier-content">
+                  <span class="tier-range">1 to 3</span>
+                  <span class="tier-label">screens</span>
+                </div>
+                <span class="tier-price">$360</span>
+              </label>
+              <label class="tier-card" data-tier="4-6" data-price="720" data-screens="4 to 6" data-indicator="indicator 2">
+                <div class="tier-content">
+                  <span class="tier-range">4 to 6</span>
+                  <span class="tier-label">screens</span>
+                </div>
+                <span class="tier-price">$720</span>
+              </label>
+              <label class="tier-card" data-tier="7-9" data-price="960" data-screens="7 to 9" data-indicator="indicator 3">
+                <div class="tier-content">
+                  <span class="tier-range">7 to 9</span>
+                  <span class="tier-label">screens</span>
+                </div>
+                <span class="tier-price">$960</span>
+              </label>
+              <label class="tier-card" data-tier="10-12" data-price="1320" data-screens="10 to 12" data-indicator="indicator 3">
+                <div class="tier-content">
+                  <span class="tier-range">10 to 12</span>
+                  <span class="tier-label">screens</span>
+                </div>
+                <span class="tier-price">$1,320</span>
+              </label>
+            </div>
+            <div class="indicator-container" id="indicator-container">
+              <div class="indicator-content">
+                <div class="loading-wrapper">
+                  <div class="loading-animation" role="status" aria-label="Loading">
+                    <div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div>
+                    <div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div>
+                    <div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div>
+                    <div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div><div class="loading-dot"></div>
+                  </div>
+                  <img src="img/tick.png" alt="" class="loading-tick">
+                </div>
+                <div class="loading-text-wrapper">
+                  <div class="loading-text-inner">
+                    <span class="loading-indicator-text" id="loading-text">Choose the number of screens you need: <span class="text-highlight">1-3 screens for $360</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="purchase-btn" id="purchase-btn" disabled>Purchase</button>
+      </div>
+    </section>
+
+    <footer class="footer-rights" aria-label="Footer rights">
+      <p class="footer-rights__line">All rights are reserved.</p>
+      <p class="footer-rights__line">all the designs made by @Tanbir</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
