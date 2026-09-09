@@ -330,9 +330,9 @@ body {
   position: relative;
   width: 120px;
   height: 150px;
-  background: var(--color-white);
+  background: transparent;
   border-radius: var(--radius-lg);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -355,7 +355,7 @@ body {
   object-position: center top;
   border-radius: 0;
   display: block;
-  background: var(--color-light-gray);
+  background: transparent;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   top: 50%;
   left: 50%;
@@ -533,9 +533,9 @@ body {
 }
 
 .work-modal__header {
-  width: 100%;
+  width: 600px;
   max-width: 100%;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -595,7 +595,7 @@ body {
   object-fit: contain;
   object-position: top center;
   display: block;
-  background: var(--color-light-gray);
+  background: transparent;
   border-radius: 12px;
   image-rendering: -webkit-optimize-contrast;
   padding: 80px 40px;
@@ -636,7 +636,7 @@ body {
   gap: 32px;
   width: 100%;
   max-width: 560px;
-  padding-left: 40px;
+  padding-left: 0;
 }
 
 .why-paragraph {
@@ -658,7 +658,7 @@ body {
 }
 
 .list-container {
-  padding-left: 40px;
+  padding-left: 0;
   width: 100%;
 }
 
@@ -1116,8 +1116,8 @@ body {
   .why-section, .expect-section { padding-bottom: 72px; width: 100%; max-width: 100%; }
   .need-section { padding-bottom: 96px; width: 100%; max-width: 100%; }
   .section-title { font-size: 16px; margin-bottom: 16px; }
-  .why-content { gap: 24px; max-width: 100%; padding-left: 20px; }
-  .list-container { padding-left: 20px; }
+  .why-content { gap: 24px; max-width: 100%; padding-left: 0; }
+  .list-container { padding-left: 0; }
   .simple-list { gap: 10px; max-width: 100%; }
   .pricing-section { max-width: 100%; padding: 0; }
   .pricing-container { padding: 0 0; }
