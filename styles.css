@@ -87,6 +87,9 @@ html {
   scrollbar-color: var(--color-gray-25) transparent;
   scrollbar-gutter: stable;
   max-width: 100%;
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 html::-webkit-scrollbar {
@@ -114,6 +117,9 @@ body {
   min-height: 100vh;
   overflow-x: clip;
   max-width: 100%;
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
 }
 
 .page {
@@ -124,6 +130,8 @@ body {
   flex-direction: column;
   overflow-x: clip;
   width: 100%;
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
 }
 
 .container {
@@ -131,43 +139,72 @@ body {
   max-width: 100%;
 }
 
-/* ===== HERO — STICKY SHRINKING LOGO — iOS 27 TOP BLUR ===== */
+/* ===== SKIPER41 PROGRESSIVE BLUR — sticky at top, behind logo ===== */
+/* Port of npx shadcn add @skiper-ui/skiper41 — ProgressiveBlur component
+   Original React:
+     <div style={{ top:0, height, background: `linear-gradient(to top, transparent, ${bg})`,
+                   maskImage: `linear-gradient(to bottom, ${bg} 50%, transparent)`,
+                   backdropFilter: `blur(${blurAmount})` }} />
+   Adapted to static HTML/CSS, fixed at viewport top, full width, behind logo.
+   Logo (.hero) has z-index 50 > blur z-index 39, so logo stays crisp while
+   content scrolling underneath gets progressively blurred. */
+.skiper-progressive-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  pointer-events: none;
+  z-index: 39;
+  user-select: none;
+  -webkit-user-select: none;
+  background: linear-gradient(to top, transparent, #f5f4f3);
+  /* Skiper41 exact: mask solid 50% then fade to transparent */
+  mask-image: linear-gradient(to bottom, #f5f4f3 50%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #f5f4f3 50%, transparent);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+@media (max-width: 640px) {
+  .skiper-progressive-blur {
+    height: 80px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+}
+
+/* ===== HERO — STICKY SHRINKING LOGO — blur/shadow removed, now above progressive blur ===== */
 .hero {
   position: sticky;
   top: 0;
-  z-index: 40;
+  z-index: 50;
   width: 100%;
   padding-top: 28px;
-  padding-bottom: 28px;
-  /* iOS 27 ultra-thin material: almost transparent, heavy blur only behind image */
-  background: rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(28px) saturate(1.85) brightness(1.04);
-  -webkit-backdrop-filter: blur(28px) saturate(1.85) brightness(1.04);
-  border-bottom: 1px solid rgba(255,255,255,0.45);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.55) inset, 0 12px 40px rgba(0,0,0,0.06);
-  transition: background 500ms ease, box-shadow 500ms ease, padding 120ms linear, backdrop-filter 500ms ease;
+  padding-bottom: 120px;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+  box-shadow: none;
+  /* removed 120ms padding transition — padding is now driven per-frame in JS for smooth continuous shrink */
+  transition: none;
+  will-change: padding;
+  transform: translateZ(0);
 }
 
 .hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -10px;
-  height: 10px;
-  /* 10px spread frosted fade — contents fade out softly under bar */
-  background: linear-gradient(to bottom, rgba(255,255,255,0.22), rgba(255,255,255,0));
-  backdrop-filter: blur(16px) saturate(1.6);
-  -webkit-backdrop-filter: blur(16px) saturate(1.6);
-  pointer-events: none;
-  opacity: 1;
+  display: none;
 }
 
 .hero.scrolled {
-  background: rgba(255, 255, 255, 0.34);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 16px 48px rgba(0,0,0,0.08);
-  padding-top: 10px;
-  padding-bottom: 10px;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  border-bottom: none;
+  /* padding is interpolated in JS — keep scoped class for future hooks but no jump */
 }
 
 .hero-content {
@@ -384,6 +421,7 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: background-color var(--transition-fast), transform var(--transition-fast);
+  cursor: pointer;
 }
 
 .work-frame-btn:hover { background-color: rgba(0, 0, 0, 0.75); transform: translate(-50%, -50%) scale(1.02); }
@@ -473,32 +511,36 @@ body {
   max-height: calc(100vh - 32px);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  overflow: auto;
+  align-items: center;
+  overflow: hidden;
   padding: 16px;
   z-index: 1;
+  background: transparent;
 }
 
 .work-modal__frame {
   width: 1200px;
   max-width: 100%;
+  max-height: calc(100vh - 32px);
   background: var(--color-white);
-  border-radius: 53px;
+  border-radius: 36px;
   padding: 24px 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+  box-shadow: none;
+  overflow: hidden;
 }
 
 .work-modal__header {
-  width: 600px;
+  width: 100%;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  flex-shrink: 0;
 }
 
 .work-modal__title {
@@ -531,19 +573,32 @@ body {
 .work-modal__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 12px;
   align-items: start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  min-height: 0;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gray-25) transparent;
+  padding: 16px 4px 16px 0;
+  background: transparent;
+  /* vertical fade at top & bottom — content blends when scrolling */
+  mask-image: linear-gradient(to bottom, transparent 0%, black 24px, black calc(100% - 24px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 24px, black calc(100% - 24px), transparent 100%);
 }
 
 .work-modal__img {
   width: 100%;
-  height: 550px;
+  height: auto;
   object-fit: contain;
   object-position: top center;
   display: block;
   background: var(--color-light-gray);
-  border-radius: 0;
+  border-radius: 12px;
   image-rendering: -webkit-optimize-contrast;
+  padding: 80px 40px;
 }
 
 @keyframes work-modal-fade-in {
@@ -1036,7 +1091,7 @@ body {
   .work-modal__window { width: 100%; max-width: calc(100% - 16px); padding: 8px; }
   .work-modal__frame { width: 100%; border-radius: 32px; padding: 16px 16px; }
   .work-modal__grid { grid-template-columns: 1fr; gap: 16px; }
-  .work-modal__img { height: 420px; }
+  .work-modal__img { height: auto; }
   .work-frame-row { flex-direction: column; gap: 16px; }
 }
 

@@ -86,7 +86,7 @@
   if (workModal) workModal.addEventListener('click', (e) => { if (e.target === workModal) closeWorkModal(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && workModal && workModal.classList.contains('is-open')) closeWorkModal(); });
 
-  // ===== STICKY SHRINKING LOGO — PER-SCROLL SLOW (iOS 27) =====
+  // ===== STICKY SHRINKING LOGO — PER-SCROLL SLOW (smooth, no jumps) =====
   const heroEl = document.querySelector('.hero');
   const heroLogo = document.querySelector('.hero-logo');
   let ticking = false;
@@ -96,14 +96,15 @@
     // Very slow per-scroll: 0 -> 520px maps 400px -> 90px linearly
     const max = 520;
     const raw = Math.min(Math.max(y / max, 0), 1);
-    const w = 400 - (310 * raw);
+    // eased raw for smoother feel (easeOutCubic: 1 - pow(1 - t, 3)) — keeps start gentle, no abrupt jump at 0.06
+    const eased = 1 - Math.pow(1 - raw, 3);
+    const w = 400 - (310 * eased);
     heroLogo.style.width = w.toFixed(2) + 'px';
-    // iOS 27 blur only behind image: keep translucent, increase blur/saturate slowly
-    const blur = 28 + 10 * raw;
-    const alpha = 0.22 + 0.14 * raw;
-    heroEl.style.background = 'rgba(255,255,255,' + alpha.toFixed(3) + ')';
-    heroEl.style.backdropFilter = 'blur(' + blur.toFixed(1) + 'px) saturate(1.85) brightness(1.04)';
-    heroEl.style.webkitBackdropFilter = 'blur(' + blur.toFixed(1) + 'px) saturate(1.85) brightness(1.04)';
+    // Top stays 28->10 smooth, bottom is now 120px per request (kept fixed)
+    const padTop = 28 - (18 * eased);
+    heroEl.style.paddingTop = padTop.toFixed(2) + 'px';
+    heroEl.style.paddingBottom = '120px';
+    // keep scrolled class for hooks but padding no longer depends on it
     heroEl.classList.toggle('scrolled', raw > 0.06);
     ticking = false;
   }
