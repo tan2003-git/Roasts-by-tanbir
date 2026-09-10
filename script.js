@@ -3,7 +3,7 @@
 
   // ===== PRICING CALCULATOR =====
   class PricingCalculator {
-    constructor() { this.tiers = [{ id: '1-3', price: 360, screens: '1 to 3' }, { id: '4-6', price: 720, screens: '4 to 6' }, { id: '7-9', price: 960, screens: '7 to 9' }, { id: '10-12', price: 1320, screens: '10 to 12' }]; this.selectedTier = null; this.discountPercent = 50; this.init(); }
+    constructor() { this.tiers = [{ id: '1-3', price: 360, screens: '1 to 3' }, { id: '4-6', price: 720, screens: '4 to 6' }, { id: '7-9', price: 1060, screens: '7 to 9' }, { id: '10-12', price: 1320, screens: '10 to 12' }]; this.selectedTier = null; this.discountPercent = 50; this.init(); }
     init() { this.bindEvents(); this.updateUI(); }
     bindEvents() {
       document.querySelectorAll('.tier-card').forEach(card => { card.addEventListener('click', () => this.selectTier(card.dataset.tier)); card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.selectTier(card.dataset.tier); } }); });
@@ -108,10 +108,21 @@
     heroEl.classList.toggle('scrolled', raw > 0.06);
     ticking = false;
   }
+  // sticky avatar + actions inside hero
+  const introActions = document.querySelector('.intro-actions');
+  function updateHeroSticky() {
+    if (!heroEl || !introActions) return;
+    const rect = introActions.getBoundingClientRect();
+    const heroRect = heroEl.getBoundingClientRect();
+    const past = rect.bottom < heroRect.bottom;
+    heroEl.classList.toggle('hero--show-sticky', past);
+  }
   window.addEventListener('scroll', () => {
-    if (!ticking) { ticking = true; requestAnimationFrame(updateHeroShrink); }
+    if (!ticking) { ticking = true; requestAnimationFrame(() => { updateHeroShrink(); updateHeroSticky(); }); }
   }, { passive: true });
+  window.addEventListener('resize', updateHeroSticky, { passive: true });
   updateHeroShrink();
+  updateHeroSticky();
 
   // ===== PAGE LOGIC =====
   const pageSections = document.querySelectorAll('section:not(.hero)');

@@ -214,6 +214,53 @@ body {
   text-align: center;
 }
 
+/* ===== HERO STICKY — BG avatar + actions slide down inside hero on scroll past intro ===== */
+.hero-sticky {
+  position: absolute;
+  top: 0;
+  left: var(--content-padding);
+  right: var(--content-padding);
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1), opacity 280ms ease;
+  z-index: 51;
+}
+
+.hero--show-sticky .hero-sticky {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-sticky__avatar {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100px;
+  display: block;
+  background: #0a0a0a;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+}
+
+.hero-sticky__actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
 .hero-logo {
   width: 400px;
   max-width: 90vw;
@@ -233,7 +280,7 @@ body {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 70px;
+  padding-bottom: 90px;
 }
 
 .intro-container {
@@ -288,7 +335,7 @@ body {
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.2px;
-  color: var(--color-dark-gray);
+  color: #000000;
   margin: 0;
   text-align: left;
 }
@@ -441,7 +488,7 @@ body {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 70px;
+  padding-bottom: 90px;
   display: flex;
   justify-content: center;
   overflow: visible;
@@ -740,11 +787,11 @@ body {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 70px;
+  padding-bottom: 90px;
 }
 
 .need-section {
-  padding-bottom: 70px;
+  padding-bottom: 90px;
 }
 
 .why-section .container,
@@ -866,7 +913,7 @@ body {
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.3px;
-  color: rgba(0, 0, 0, 0.5);
+  color: #000000;
   margin: 0;
 }
 
@@ -964,7 +1011,7 @@ body {
   font-weight: 700;
   line-height: 80%;
   letter-spacing: -0.06em;
-  color: var(--color-black-20);
+  color: #000000;
   text-shadow: inset 0 3px 7px var(--color-black-10);
 }
 
@@ -974,7 +1021,7 @@ body {
   font-weight: 500;
   line-height: 22px;
   letter-spacing: -0.5px;
-  color: var(--color-gray);
+  color: #000000;
 }
 
 .tier-price {
@@ -1118,7 +1165,7 @@ body {
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.3px;
-  color: var(--color-dark-gray);
+  color: #000000;
   white-space: nowrap;
   text-align: left;
   opacity: 0;
@@ -1200,7 +1247,7 @@ body {
   font-size: 14px;
   line-height: 130%;
   letter-spacing: -0.3px;
-  color: rgba(0, 0, 0, 0.5);
+  color: #000000;
   margin: 0;
   text-align: center;
   flex: 1;
@@ -1224,7 +1271,7 @@ body {
   .hero { padding-top: 48px; padding-bottom: 96px; }
   .logo-container { width: 300px; height: 250px; }
   #horse-canvas { width: 300px; height: 250px; }
-  .intro-section { padding-bottom: 70px; width: 100%; max-width: 100%; }
+  .intro-section { padding-bottom: 90px; width: 100%; max-width: 100%; }
   .intro-avatar-wrap { flex-direction: column; gap: 8px; align-items: flex-start; padding-bottom: 16px; }
   .intro-avatar-spacer { display: none; }
   .intro-container { flex-direction: column; gap: 16px; align-items: flex-start; }
@@ -1236,13 +1283,13 @@ body {
   .mockup-image:nth-child(3) { transform: translateX(12px) translateY(-40px) rotate(-1deg); margin-top: -20px; }
   .mockup-image:nth-child(4) { transform: translateX(18px) translateY(-60px) rotate(2deg); margin-top: -20px; }
   .view-work-btn { padding: 8px 16px; font-size: 13px; bottom: -16px; }
-  .work-frame-section { max-width: 100%; padding-bottom: 70px; }
+  .work-frame-section { max-width: 100%; padding-bottom: 90px; }
   .work-frame { width: 120px; height: 150px; }
   .work-frame-images { width: 120px; height: 150px; }
   .work-frame-image { border-radius: 0; width: 62px; height: 135px; }
   .work-frame-btn { padding: 8px 16px; font-size: 13px; bottom: -14px; }
-  .why-section, .expect-section { padding-bottom: 70px; width: 100%; max-width: 100%; }
-  .need-section { padding-bottom: 70px; width: 100%; max-width: 100%; }
+  .why-section, .expect-section { padding-bottom: 90px; width: 100%; max-width: 100%; }
+  .need-section { padding-bottom: 90px; width: 100%; max-width: 100%; }
   .why-section .container,
   .expect-section .container,
   .need-section .container { flex-direction: column; gap: 16px; }
@@ -1277,7 +1324,7 @@ body {
   .hero { padding-top: 96px; padding-bottom: 192px; }
   .logo-container { width: 500px; height: 420px; }
   #horse-canvas { width: 500px; height: 420px; }
-  .intro-section { padding-bottom: 70px; width: 100%; max-width: 700px; }
+  .intro-section { padding-bottom: 90px; width: 100%; max-width: 700px; }
   .mockup-stack { width: 110px; }
   .work-frame-section { width: 100%; max-width: 600px; }
   .why-section, .expect-section, .need-section { width: 100%; max-width: 700px; }
