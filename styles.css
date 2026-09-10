@@ -250,6 +250,9 @@ body {
   border-radius: 100px;
   display: block;
   background: #0a0a0a;
+  border: none;
+  outline: none;
+  box-shadow: none;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: high-quality;
 }
@@ -314,6 +317,9 @@ body {
   border-radius: 100px;
   display: block;
   background: #0a0a0a;
+  border: none;
+  outline: none;
+  box-shadow: none;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: high-quality;
 }
@@ -349,6 +355,9 @@ body {
   border-radius: 100px;
   display: block;
   background: #0a0a0a;
+  border: none;
+  outline: none;
+  box-shadow: none;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: high-quality;
 }
@@ -1306,11 +1315,12 @@ body {
   .price-container { padding: 0 6px 6px; border-radius: 32px; }
   .selector-header { padding: 20px 12px; }
   .selector-title { font-size: 18px; }
-  .tier-cards { flex-direction: column; gap: 8px; }
-  .tier-card { min-height: 160px; padding: 14px; }
-  .tier-range { font-size: 48px; }
-  .tier-label { font-size: 16px; }
-  .tier-price { font-size: 20px; }
+  .tier-cards { flex-direction: row; gap: 6px; flex-wrap: nowrap; }
+  .tier-card { flex: 1; min-width: 0; min-height: 140px; padding: 10px 6px; }
+  .tier-content { height: 90px; }
+  .tier-range { font-size: 22px; }
+  .tier-label { font-size: 12px; line-height: 14px; }
+  .tier-price { font-size: 14px; padding-top: 8px; line-height: 18px; }
   .indicator-content { padding: 16px 20px; gap: 12px; flex-wrap: wrap; justify-content: flex-start; text-align: left; }
   .loading-indicator-text { font-size: 14px; white-space: normal; text-align: left; line-height: 1.4; }
   .loading-text-wrapper { height: auto; min-height: 28px; justify-content: flex-start; }
@@ -1333,8 +1343,12 @@ body {
   .offer-content { padding: 20px 40px; }
   .discount-badge { width: 180px; height: 120px; }
   .discount-icon { width: 180px; height: 120px; top: -28px; }
-  .tier-cards { gap: 8px; flex-wrap: wrap; }
-  .tier-card { flex: 1 1 calc(50% - 8px); min-height: 180px; }
+  .tier-cards { gap: 8px; flex-wrap: nowrap; }
+  .tier-card { flex: 1; min-width: 0; min-height: 180px; padding: 14px 8px; }
+  .tier-content { height: 110px; }
+  .tier-range { font-size: 28px; }
+  .tier-label { font-size: 14px; }
+  .tier-price { font-size: 18px; }
   .indicator-content { padding: 20px 32px; }
 }
 
