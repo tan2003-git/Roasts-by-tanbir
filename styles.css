@@ -927,6 +927,19 @@ body {
   margin: 0;
 }
 
+.offer-text__short {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .offer-text__full {
+    display: none;
+  }
+  .offer-text__short {
+    display: inline;
+  }
+}
+
 .discount-badge {
   position: relative;
   width: 210px;
