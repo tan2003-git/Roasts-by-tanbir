@@ -283,6 +283,7 @@ body {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 150px;
   padding-bottom: 90px;
 }
 
@@ -1318,7 +1319,7 @@ body {
   .tier-cards { flex-direction: row; gap: 6px; flex-wrap: nowrap; }
   .tier-card { flex: 1; min-width: 0; min-height: 140px; padding: 10px 6px; }
   .tier-content { height: 90px; }
-  .tier-range { font-size: 22px; }
+  .tier-range { font-family: var(--font-sf-rounded); font-size: 42px; font-weight: 700; line-height: 80%; letter-spacing: -0.06em; }
   .tier-label { font-size: 12px; line-height: 14px; }
   .tier-price { font-size: 14px; padding-top: 8px; line-height: 18px; }
   .indicator-content { padding: 16px 20px; gap: 12px; flex-wrap: wrap; justify-content: flex-start; text-align: left; }
