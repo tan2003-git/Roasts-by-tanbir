@@ -919,25 +919,12 @@ body {
 
 .offer-text {
   font-family: var(--font-inter);
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.3px;
   color: #000000;
   margin: 0;
-}
-
-.offer-text__short {
-  display: none;
-}
-
-@media (max-width: 640px) {
-  .offer-text__full {
-    display: none;
-  }
-  .offer-text__short {
-    display: inline;
-  }
 }
 
 .discount-badge {
@@ -962,7 +949,7 @@ body {
 .price-container {
   background: var(--color-black-08);
   border-radius: var(--radius-3xl);
-  padding: 0 8px 8px;
+  padding: 0 8px;
   border: none;
   position: relative;
 }
@@ -1323,17 +1310,17 @@ body {
   .pricing-section { max-width: 100%; padding: 0; }
   .pricing-container { padding: 0 0; }
   .offer-content { padding: 16px 20px; gap: 12px; }
-  .offer-text { font-size: 16px; }
+  .offer-text { font-size: 14px; }
   .discount-badge { width: 140px; height: 95px; }
   .discount-icon { top: -20px; width: 140px; height: 95px; }
-  .price-container { padding: 0 6px 6px; border-radius: 32px; }
+  .price-container { padding: 0 6px; border-radius: 32px; }
   .selector-header { padding: 20px 12px; }
   .selector-title { font-size: 18px; }
   .tier-cards { flex-direction: row; gap: 6px; flex-wrap: wrap; }
   .tier-card { flex: 1 1 calc(50% - 6px); min-width: 0; min-height: 140px; padding: 10px 6px; }
-  .tier-content { height: 90px; }
+  .tier-content { height: 100px; }
   .tier-range { font-family: var(--font-sf-rounded); font-size: 36px; font-weight: 700; line-height: 80%; letter-spacing: -0.06em; }
-  .tier-label { font-size: 20px; line-height: 22px; letter-spacing: -0.5px; }
+  .tier-label { font-family: var(--font-inter); font-size: 16px; font-weight: 500; line-height: 20px; letter-spacing: -0.5px; color: #000000; }
   .tier-price { font-size: 24px; padding-top: 8px; line-height: 30px; letter-spacing: -0.03em; }
   .indicator-content { padding: 16px 20px; gap: 12px; flex-wrap: wrap; justify-content: flex-start; text-align: left; }
   .loading-indicator-text { font-size: 14px; white-space: normal; text-align: left; line-height: 1.4; }
