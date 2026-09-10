@@ -244,6 +244,20 @@ body {
   width: 100%;
 }
 
+.intro-avatar-wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+.intro-avatar-spacer {
+  flex: 0 0 160px;
+  max-width: 160px;
+}
+
 .intro-image {
   flex: 0 0 140px;
   width: 140px;
@@ -1211,6 +1225,8 @@ body {
   .logo-container { width: 300px; height: 250px; }
   #horse-canvas { width: 300px; height: 250px; }
   .intro-section { padding-bottom: 72px; width: 100%; max-width: 100%; }
+  .intro-avatar-wrap { flex-direction: column; gap: 8px; align-items: flex-start; padding-bottom: 8px; }
+  .intro-avatar-spacer { display: none; }
   .intro-container { flex-direction: column; gap: 16px; align-items: flex-start; }
   .intro-label { flex: none; max-width: 100%; width: 100%; }
   .intro-image { width: 100px; height: 100px; flex: 0 0 100px; border-radius: 100px; }
