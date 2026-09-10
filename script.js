@@ -51,7 +51,17 @@
       // 0.3s stagger is between texts; first shows immediately with container fade
       show(0);
     }
-    handlePurchase() { const tier = this.tiers.find(t => t.id === this.selectedTier); if (!tier) return; const discountedPrice = tier.price * (1 - this.discountPercent / 100); alert(`Purchase initiated for ${tier.screens} Screens at $${discountedPrice} (${this.discountPercent}% off!)`); }
+    handlePurchase() {
+      const tier = this.tiers.find(t => t.id === this.selectedTier); if (!tier) return;
+      const checkoutUrls = {
+        '1-3': 'https://whop.com/checkout/plan_Ftpq1F78AqwKs',
+        '4-6': 'https://whop.com/checkout/plan_z5CVodvnBanRs',
+        '7-9': 'https://whop.com/checkout/plan_NjSLFoeF32P6I',
+        '10-12': 'https://whop.com/checkout/plan_kOvAqdSqypaCO'
+      };
+      const url = checkoutUrls[this.selectedTier];
+      if (url) window.location.href = url;
+    }
     updateUI() {
       document.querySelectorAll('.tier-card').forEach(card => { const isSelected = card.dataset.tier === this.selectedTier; card.classList.toggle('selected', isSelected); card.setAttribute('aria-selected', isSelected); });
       const purchaseBtn = document.getElementById('purchase-btn'); if (purchaseBtn) { purchaseBtn.disabled = !this.selectedTier; }
