@@ -919,7 +919,7 @@ body {
 
 .offer-text {
   font-family: var(--font-inter);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.3px;
@@ -1332,7 +1332,7 @@ body {
   .tier-cards { flex-direction: row; gap: 6px; flex-wrap: wrap; }
   .tier-card { flex: 1 1 calc(50% - 6px); min-width: 0; min-height: 140px; padding: 10px 6px; }
   .tier-content { height: 90px; }
-  .tier-range { font-family: var(--font-sf-rounded); font-size: 42px; font-weight: 700; line-height: 80%; letter-spacing: -0.06em; }
+  .tier-range { font-family: var(--font-sf-rounded); font-size: 36px; font-weight: 700; line-height: 80%; letter-spacing: -0.06em; }
   .tier-label { font-size: 12px; line-height: 14px; }
   .tier-price { font-size: 14px; padding-top: 8px; line-height: 18px; }
   .indicator-content { padding: 16px 20px; gap: 12px; flex-wrap: wrap; justify-content: flex-start; text-align: left; }
