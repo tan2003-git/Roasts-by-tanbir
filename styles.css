@@ -227,7 +227,31 @@ body {
   transition: filter 300ms ease;
 }
 
-/* ===== INTRO SECTION — 700px horizontal flex with image left + 16px gap ===== */
+/* ===== BRAND TOP — 40px avatar relocated from intro ===== */
+.brand-top {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px 0 8px;
+}
+
+.brand-top__img {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100px;
+  display: block;
+  background: #0a0a0a;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+}
+
+/* ===== INTRO SECTION — 700px, Reforge left, no image ===== */
 .intro-section {
   width: 100%;
   max-width: 700px;
