@@ -233,7 +233,7 @@ body {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 96px;
+  padding-bottom: 70px;
 }
 
 .intro-container {
@@ -250,7 +250,7 @@ body {
   gap: 16px;
   align-items: center;
   width: 100%;
-  padding-bottom: 12px;
+  padding-bottom: 24px;
 }
 
 .intro-avatar-spacer {
@@ -441,7 +441,7 @@ body {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 96px;
+  padding-bottom: 70px;
   display: flex;
   justify-content: center;
   overflow: visible;
@@ -740,11 +740,11 @@ body {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 96px;
+  padding-bottom: 70px;
 }
 
 .need-section {
-  padding-bottom: 128px;
+  padding-bottom: 70px;
 }
 
 .why-section .container,
@@ -1224,8 +1224,8 @@ body {
   .hero { padding-top: 48px; padding-bottom: 96px; }
   .logo-container { width: 300px; height: 250px; }
   #horse-canvas { width: 300px; height: 250px; }
-  .intro-section { padding-bottom: 72px; width: 100%; max-width: 100%; }
-  .intro-avatar-wrap { flex-direction: column; gap: 8px; align-items: flex-start; padding-bottom: 8px; }
+  .intro-section { padding-bottom: 70px; width: 100%; max-width: 100%; }
+  .intro-avatar-wrap { flex-direction: column; gap: 8px; align-items: flex-start; padding-bottom: 16px; }
   .intro-avatar-spacer { display: none; }
   .intro-container { flex-direction: column; gap: 16px; align-items: flex-start; }
   .intro-label { flex: none; max-width: 100%; width: 100%; }
@@ -1236,13 +1236,13 @@ body {
   .mockup-image:nth-child(3) { transform: translateX(12px) translateY(-40px) rotate(-1deg); margin-top: -20px; }
   .mockup-image:nth-child(4) { transform: translateX(18px) translateY(-60px) rotate(2deg); margin-top: -20px; }
   .view-work-btn { padding: 8px 16px; font-size: 13px; bottom: -16px; }
-  .work-frame-section { max-width: 100%; padding-bottom: 72px; }
+  .work-frame-section { max-width: 100%; padding-bottom: 70px; }
   .work-frame { width: 120px; height: 150px; }
   .work-frame-images { width: 120px; height: 150px; }
   .work-frame-image { border-radius: 0; width: 62px; height: 135px; }
   .work-frame-btn { padding: 8px 16px; font-size: 13px; bottom: -14px; }
-  .why-section, .expect-section { padding-bottom: 72px; width: 100%; max-width: 100%; }
-  .need-section { padding-bottom: 96px; width: 100%; max-width: 100%; }
+  .why-section, .expect-section { padding-bottom: 70px; width: 100%; max-width: 100%; }
+  .need-section { padding-bottom: 70px; width: 100%; max-width: 100%; }
   .why-section .container,
   .expect-section .container,
   .need-section .container { flex-direction: column; gap: 16px; }
@@ -1277,7 +1277,7 @@ body {
   .hero { padding-top: 96px; padding-bottom: 192px; }
   .logo-container { width: 500px; height: 420px; }
   #horse-canvas { width: 500px; height: 420px; }
-  .intro-section { padding-bottom: 96px; width: 100%; max-width: 700px; }
+  .intro-section { padding-bottom: 70px; width: 100%; max-width: 700px; }
   .mockup-stack { width: 110px; }
   .work-frame-section { width: 100%; max-width: 600px; }
   .why-section, .expect-section, .need-section { width: 100%; max-width: 700px; }
