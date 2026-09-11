@@ -125,7 +125,7 @@ body {
 .page {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 300px var(--content-padding) 0;
+  padding: 200px var(--content-padding) 0;
   display: flex;
   flex-direction: column;
   overflow-x: clip;
@@ -1277,7 +1277,7 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 640px) {
-  .page { padding: 300px 20px 0; max-width: 100%; overflow-x: clip; }
+  .page { padding: 200px 20px 0; max-width: 100%; overflow-x: clip; }
   .hero { padding-top: 48px; padding-bottom: 96px; }
   .logo-container { width: 300px; height: 250px; }
   #horse-canvas { width: 300px; height: 250px; }
@@ -1331,7 +1331,7 @@ body {
 }
 
 @media (min-width: 641px) and (max-width: 1024px) {
-  .page { max-width: 900px; padding: 300px 32px 0; overflow-x: clip; }
+  .page { max-width: 900px; padding: 200px 32px 0; overflow-x: clip; }
   .hero { padding-top: 96px; padding-bottom: 192px; }
   .logo-container { width: 500px; height: 420px; }
   #horse-canvas { width: 500px; height: 420px; }
@@ -1354,7 +1354,7 @@ body {
 }
 
 @media (min-width: 1025px) {
-  .page { max-width: 900px; padding: 300px 40px 0; overflow-x: clip; }
+  .page { max-width: 900px; padding: 200px 40px 0; overflow-x: clip; }
   .hero { padding-top: 96px; padding-bottom: 160px; }
   .logo-container { width: 600px; height: 500px; }
   #horse-canvas { width: 600px; height: 500px; }
